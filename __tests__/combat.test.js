@@ -1,6 +1,6 @@
 import { Character, chooseCharacter } from "../src/js/character.js";
 import { Monster, createZombie } from "../src/js/monster.js";
-import { heroVsMonster, levelUp} from "../src/js/combat";
+import { heroVsMonster, levelUp } from "../src/js/combat";
 
 describe('heroVsMonster', () => {
     test("should grab the warrior.hp, warrior.ap and zombie.hp, zombie.ap", () => {
@@ -38,7 +38,20 @@ describe("levelUp", () => {
         levelUp(hero);
         expect(hero.level).toEqual(2);
     });
+
+    test("should check what role the hero is and change the total hp based on chosen role.", () => {
+        let hero = chooseCharacter(1);
+        levelUp(hero);
+        expect(hero.hp).toEqual(15);
+    });
+
+    test("should check what role the hero is and change the total ap based on chosen role.", () => {
+        let hero = chooseCharacter(2);
+        levelUp(hero);
+        expect(hero.ap).toEqual(18);
+    });
 });
+
 // describe('combatFunc'), () => {
 //     test("should return updated hp values after the function runs")
 

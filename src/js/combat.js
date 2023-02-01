@@ -15,8 +15,10 @@ export function heroVsMonster(heroCall, monsterCall) {
 
 export function levelUp(currentHero){
     currentHero.level ++;
-    return currentHero
-   
+    currentHero.hp = currentHero.hpCapacity + 5;
+    currentHero.hpCapacity = currentHero.hp;
+    currentHero.ap = currentHero.ap + 5;
+    return currentHero;
 }
 
 // function checkHp(hero, monster) {
