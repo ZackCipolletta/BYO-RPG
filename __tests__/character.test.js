@@ -9,7 +9,7 @@ describe('Character', () => {
   });
 
 
-  test('should create new character with attrivutes', () => {
+  test('should create new character with attributes', () => {
     expect(character.role).toEqual("warrior");
     expect(character.hp).toEqual(10);
     expect(character.ap).toEqual(10);
