@@ -6,11 +6,10 @@ export function heroVsMonster(heroCall, monsterCall) {
     let zombie = monsterCall;
     hero.hp = hero.hp - zombie.ap;
     zombie.hp = zombie.hp - hero.ap;  
-    // if (zombie.hp <= 0){
-    //     levelUp(hero);
-    //     nextMonsterFunc(hero);
-    // }
-        // checkHp(hero, zombie);
+    if (zombie.hp <= 0){
+        levelUp(hero);
+        nextMonsterFunc(hero);
+    }
 }
 
 export function levelUp(currentHero){
@@ -21,6 +20,7 @@ export function levelUp(currentHero){
     return currentHero;
 }
 
+    
 // function checkHp(hero, monster) {
 //     console.log('hero stats:' + hero.hp + ". Monster stats: " + monster.hp );
 // }
