@@ -11,6 +11,11 @@ export function createZombie() {
   return zombie;
 }
 
+// export function createOwlBear() {
+//   let owlBear = new Monster("owlBear", 30, 8);
+//   return owlBear;
+// }
+
 //   checkType() {
 //     if ((this.side1 > (this.side2 + this.side3)) || (this.side2 > (this.side1 + this.side3)) || (this.side3 > (this.side1 + this.side2))) {
 //       return "not a triangle";
