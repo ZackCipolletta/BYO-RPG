@@ -4,7 +4,12 @@ export default class Monster {
     this.hp = hp;
     this.ap = ap;
   }
+}
 
+export function createZombie() {
+  let zombie = new Monster("zombie", 15, 5);
+  return zombie;
+}
 
 //   checkType() {
 //     if ((this.side1 > (this.side2 + this.side3)) || (this.side2 > (this.side1 + this.side3)) || (this.side3 > (this.side1 + this.side2))) {
@@ -17,4 +22,3 @@ export default class Monster {
 //       return "isosceles triangle";
 //     }
 //   }
-}
