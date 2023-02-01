@@ -1,8 +1,14 @@
 export default class Character {
-  constructor(role, hp, ap, level) {    
+  constructor(role, hp, ap, level) {
     this.role = role;
     this.hp = hp;
     this.ap = ap;
     this.level = level;
+  }
+
+
+  createWarrior() {
+    let warrior = new Character("warrior", 10, 10, 1);
+    return warrior;
   }
 }

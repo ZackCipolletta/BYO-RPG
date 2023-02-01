@@ -8,6 +8,4 @@ describe('Monster', () => {
     expect(monster.hp).toEqual(15);
     expect(monster.ap).toEqual(5);
   });
-
 });
-
