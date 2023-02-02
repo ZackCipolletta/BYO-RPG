@@ -1,14 +1,17 @@
+import { javascript } from "webpack";
 import { Character, chooseCharacter } from "./character.js";
 import { Monster, createZombie, createOwlBear, createCthulu } from "./monster.js";
 
+let myMonster;
 export function heroVsMonster(heroCall, monsterCall) {
   let hero = heroCall;
-  let zombie = monsterCall;
-  hero.hp = hero.hp - zombie.ap;
-  zombie.hp = zombie.hp - hero.ap;
-  if (zombie.hp <= 0) {
+  let monster = monsterCall;
+  hero.hp = hero.hp - monster.ap;
+  monster.hp = monster.hp - hero.ap;
+  if (monster.hp <= 0) {
     levelUp(hero);
-    continueCombatFunc(hero);
+    // let response = true;
+    // continueCombatFunc(hero, response);
   }
 }
 
@@ -21,22 +24,30 @@ export function levelUp(currentHero) {
 }
 
 export function continueCombatFunc(hero, response) {
-  // if (response === 'y') {
-  //   nextMonsterFunc(hero)
-  // }
+  if (response === true) {
+    nextMonsterFunc(hero);
+    return 'calling nextMonsterFunc';
+  }
 }
 
-// export function nextMonsterFunc(currentHero) {
-//   let currentMonster;
-//   if (currentHero.level === 1) {
-//     currentMonster = createZombie();
-//   } else if (currentHero.level === 2) {
-//     createOwlBear();
-//   } else if (currentHero.level === 3) {
-//     currentMonster = createCthulu();
-//   }
-//   heroVsMonster(currentHero, currentMonster);
-// }
+export function nextMonsterFunc(currentHero) {
+  // let currentMonster;
+  if (currentHero.level === 1) {
+    myMonster = createZombie();
+  } else if (currentHero.level === 2) {
+    myMonster = createOwlBear();
+  } else if (currentHero.level === 3) {
+    myMonster = createCthulu();
+  }
+  heroVsMonster(currentHero, myMonster);
+  setMonsterFunc(myMonster);
+  return myMonster.name;
+}
+
+function setMonsterFunc(someMonster) {
+  myMonster = someMonster;
+  return myMonster;
+}
 
 // function checkHp(hero, monster) {
 //     console.log('hero stats:' + hero.hp + ". Monster stats: " + monster.hp );

@@ -33,5 +33,4 @@ export function chooseCharacter(type) {
   } else if (type === 3) { 
     return createRogue();
   }
-
 }

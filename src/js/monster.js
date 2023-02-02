@@ -12,14 +12,14 @@ export function createZombie() {
 }
 
 export function createOwlBear() {
-  let owlBear = new Monster("owlBear", 30, 8);
+  let owlBear = new Monster("owlear", 30, 8);
   return owlBear;
 }
 
-// export function createCthulu() {
-//   let owlBear = new Monster("Cthulu", 50, 15);
-//   return owlBear;
-// }
+export function createCthulu() {
+  let owlBear = new Monster("Cthulu", 50, 15);
+  return owlBear;
+}
 
 //   checkType() {
 //     if ((this.side1 > (this.side2 + this.side3)) || (this.side2 > (this.side1 + this.side3)) || (this.side3 > (this.side1 + this.side2))) {

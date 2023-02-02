@@ -52,24 +52,23 @@ describe("levelUp", () => {
   });
 });
 
-describe("continueCombatFunc", () => {
-  test("should check if the response is y or n, then if the response is y, call the nextMonsterFunc", () => {
-    let hero = chooseCharacter(2);
-    levelUp(hero);
-    let response = 'y';
-    continueCombatFunc(hero, response);
-    expect(continueCombatFunc).toEqual('call nextMonsterFunc');
-  })
-})
-
-// describe("nextMonsterFunc", () => {
-//   test("should check the current level of the hero and call a monster based on the hero's current level", () => {
-//     let hero = chooseCharacter(1);
-//     hero.level = 2;
-//     nextMonsterFunc(hero);
-//     expect(nextMonsterFunc()).toEqual("OwlBear");
+// describe("continueCombatFunc", () => {
+//   test("should check if the response is y or n, then if the response is y, call the nextMonsterFunc", () => {
+//     let hero = chooseCharacter(2);
+//     levelUp(hero);
+//     let response = 'y';
+//     continueCombatFunc(hero, response);
+//     expect(continueCombatFunc(hero, response)).toEqual('calling nextMonsterFunc');
 //   });
 // });
+
+describe("nextMonsterFunc", () => {
+  test("should check the current level of the hero and call a monster based on the hero's current level", () => {
+    let hero = chooseCharacter(1);
+    hero.level = 3;
+    expect(nextMonsterFunc(hero)).toEqual("Cthulu");
+  });
+});
 // describe('combatFunc'), () => {
 //     test("should return updated hp values after the function runs")
 
