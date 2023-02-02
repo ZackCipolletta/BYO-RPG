@@ -1,6 +1,6 @@
 import { Character, chooseCharacter } from "../src/js/character.js";
 import { Monster, createZombie } from "../src/js/monster.js";
-import { heroVsMonster, levelUp } from "../src/js/combat";
+import { heroVsMonster, levelUp, nextMonsterFunc } from "../src/js/combat";
 
 describe('heroVsMonster', () => {
     test("should grab the warrior.hp, warrior.ap and zombie.hp, zombie.ap", () => {
@@ -52,6 +52,14 @@ describe("levelUp", () => {
     });
 });
 
+// describe("nextMonsterFunc", () => {
+//     test("should check the current level of the hero and call a monster based on the hero's current level", () => {
+//         let hero = chooseCharacter(1);
+//         hero.level = 2;
+//         nextMonsterFunc(hero);
+//         expect(nextMonsterFunc()).toEqual("OwlBear");
+//     });
+// });
 // describe('combatFunc'), () => {
 //     test("should return updated hp values after the function runs")
 
