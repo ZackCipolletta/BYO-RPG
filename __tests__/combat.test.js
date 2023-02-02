@@ -30,6 +30,13 @@ describe('heroVsMonster', () => {
     heroVsMonster(hero, zombie);
     expect(zombie.hp).toBeLessThanOrEqual(0);
   });
+
+  test("should print you are dead if hp drops below zero", () => {
+    let hero = chooseCharacter(1);
+    hero.hp = 0;
+    let zombie = createZombie();
+    expect(heroVsMonster(hero, zombie)).toEqual("YOU SUCK");
+  });
 });
 
 describe("levelUp", () => {
@@ -52,15 +59,15 @@ describe("levelUp", () => {
   });
 });
 
-// describe("continueCombatFunc", () => {
-//   test("should check if the response is y or n, then if the response is y, call the nextMonsterFunc", () => {
-//     let hero = chooseCharacter(2);
-//     levelUp(hero);
-//     let response = 'y';
-//     continueCombatFunc(hero, response);
-//     expect(continueCombatFunc(hero, response)).toEqual('calling nextMonsterFunc');
-//   });
-// });
+describe("continueCombatFunc", () => {
+  test("should check if the response is true or false, then if the response is true, call the nextMonsterFunc", () => {
+    let hero = chooseCharacter(1);
+    levelUp(hero);
+    let response = true;
+    continueCombatFunc(hero, response);
+    expect(continueCombatFunc(hero, response)).toEqual('calling nextMonsterFunc');
+  });
+});
 
 describe("nextMonsterFunc", () => {
   test("should check the current level of the hero and call a monster based on the hero's current level", () => {

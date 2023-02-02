@@ -8,10 +8,14 @@ export function heroVsMonster(heroCall, monsterCall) {
   let monster = monsterCall;
   hero.hp = hero.hp - monster.ap;
   monster.hp = monster.hp - hero.ap;
+  if (hero.hp <= 0 ){
+   return  "YOU SUCK";
+  }
+  let response = false;
   if (monster.hp <= 0) {
     levelUp(hero);
-    // let response = true;
-    // continueCombatFunc(hero, response);
+    response = true;
+    continueCombatFunc(hero, response);
   }
 }
 
@@ -40,14 +44,9 @@ export function nextMonsterFunc(currentHero) {
     myMonster = createCthulu();
   }
   heroVsMonster(currentHero, myMonster);
-  setMonsterFunc(myMonster);
   return myMonster.name;
 }
 
-function setMonsterFunc(someMonster) {
-  myMonster = someMonster;
-  return myMonster;
-}
 
 // function checkHp(hero, monster) {
 //     console.log('hero stats:' + hero.hp + ". Monster stats: " + monster.hp );
