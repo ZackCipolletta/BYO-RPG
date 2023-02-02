@@ -1,6 +1,6 @@
 import { Character, chooseCharacter } from "../src/js/character.js";
-import { Monster, createZombie } from "../src/js/monster.js";
-import { heroVsMonster, levelUp, continueCombatFunc, nextMonsterFunc } from "../src/js/combat";
+import { Monster, createZombie, createCthulu } from "../src/js/monster.js";
+import { heroVsMonster, levelUp, continueCombatFunc, nextMonsterFunc, checkGameState } from "../src/js/combat";
 
 describe('heroVsMonster', () => {
   test("should grab the warrior.hp, warrior.ap and zombie.hp, zombie.ap", () => {
@@ -30,12 +30,21 @@ describe('heroVsMonster', () => {
     heroVsMonster(hero, zombie);
     expect(zombie.hp).toBeLessThanOrEqual(0);
   });
+});
 
+describe("checkGameState", () => {
   test("should print you are dead if hp drops below zero", () => {
     let hero = chooseCharacter(1);
     hero.hp = 0;
     let zombie = createZombie();
-    expect(heroVsMonster(hero, zombie)).toEqual("YOU SUCK");
+    expect(checkGameState(hero, zombie)).toEqual("YOU SUCK");
+  });
+
+  test("should print YOU WIN if monster is Cthulu and monster hp is <= 0", () => {
+    let hero = chooseCharacter(1);
+    let monster = createCthulu();
+    monster.hp = 0;
+    expect(checkGameState(hero, monster)).toEqual("YOU WIN")
   });
 });
 
@@ -76,7 +85,3 @@ describe("nextMonsterFunc", () => {
     expect(nextMonsterFunc(hero)).toEqual("Cthulu");
   });
 });
-// describe('combatFunc'), () => {
-//     test("should return updated hp values after the function runs")
-
-// }

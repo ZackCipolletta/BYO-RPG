@@ -8,9 +8,8 @@ export function heroVsMonster(heroCall, monsterCall) {
   let monster = monsterCall;
   hero.hp = hero.hp - monster.ap;
   monster.hp = monster.hp - hero.ap;
-  if (hero.hp <= 0 ){
-   return  "YOU SUCK";
-  }
+
+  
   let response = false;
   if (monster.hp <= 0) {
     levelUp(hero);
@@ -19,6 +18,15 @@ export function heroVsMonster(heroCall, monsterCall) {
   }
 }
 
+export function checkGameState(hero, monster){
+  let finalboss = monster;
+  if (hero.hp <= 0 ){
+    return  "YOU SUCK";
+   }
+   if (finalboss.name === "Cthulu" && finalboss.hp === 0){
+    return "YOU WIN";
+} 
+}
 export function levelUp(currentHero) {
   currentHero.level++;
   currentHero.hp = currentHero.hpCapacity + 5;
@@ -46,6 +54,7 @@ export function nextMonsterFunc(currentHero) {
   heroVsMonster(currentHero, myMonster);
   return myMonster.name;
 }
+
 
 
 // function checkHp(hero, monster) {
