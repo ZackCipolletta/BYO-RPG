@@ -39,4 +39,4 @@ In an effort to decrease development time we incorporated a function which re-in
 ## License
 MIT
 
-Copyright (c) 1/29/2023 Zachary Cipolletta
+Copyright (c) 2/2/2023 Zachary Cipolletta & Stephen Zook
