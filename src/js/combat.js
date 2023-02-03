@@ -1,4 +1,3 @@
-import { javascript } from "webpack";
 import { Character, chooseCharacter } from "./character.js";
 import { Monster, createZombie, createOwlBear, createCthulu } from "./monster.js";
 
@@ -8,24 +7,17 @@ export function heroVsMonster(heroCall, monsterCall) {
   let monster = monsterCall;
   hero.hp = hero.hp - monster.ap;
   monster.hp = monster.hp - hero.ap;
-
-  
-  let response = false;
-  if (monster.hp <= 0) {
-    levelUp(hero);
-    response = true;
-    continueCombatFunc(hero, response);
-  }
+  checkGameState(hero, monster);
 }
 
-export function checkGameState(hero, monster){
+export function checkGameState(hero, monster) {
   let finalboss = monster;
-  if (hero.hp <= 0 ){
-    return  "YOU SUCK";
-   }
-   if (finalboss.name === "Cthulu" && finalboss.hp === 0){
+  if (hero.hp <= 0) {
+    return "YOU SUCK";
+  }
+  if (finalboss.name === "Cthulu" && finalboss.hp === 0) {
     return "YOU WIN";
-} 
+  }
 }
 export function levelUp(currentHero) {
   currentHero.level++;
@@ -52,7 +44,7 @@ export function nextMonsterFunc(currentHero) {
     myMonster = createCthulu();
   }
   heroVsMonster(currentHero, myMonster);
-  return myMonster.name;
+  return myMonster;
 }
 
 

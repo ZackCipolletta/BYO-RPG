@@ -3,26 +3,35 @@
 <head>
   <title>Shape Tracker</title>
 </head>
+
 <body>
-  <h3>Enter three lengths to determine if they can make a triangle.</h3>
-  <form id="triangle-checker-form">
-    <label for="length1">Enter a number:</label>
-    <input id="length1" type="number">
-    <label for="length2">Enter a number:</label>
-    <input id="length2" type="number">
-    <label for="length3">Enter a number:</label>
-    <input id="length3" type="number">
-    <button type="submit">Submit</button>
-  </form>
-  <ul id="response"></ul>
-  <h3>Enter the lengths of a rectangle's two sides to determine its area.</h3>
-  <form id="rectangle-area-form">
-    <label for="rect-length1">Enter a number:</label>
-    <input id="rect-length1" type="number">
-    <label for="rect-length2">Enter a number:</label>
-    <input id="rect-length2" type="number">
-    <button type="submit">Submit</button>
-  </form>
-  <ul id="response2"></ul>
+  <div id="hero-info">
+  <h1>Create Your Character</h1>
+  <br>
+  <h2>Warrior: Base HP: 10 Base AP: 10</h2>
+  <br>
+  <h2>Mage: Base HP: 7 Base AP: 13</h2>
+  <br>
+  <h2>Rogue: Base HP: 5 Base AP: 15</h2>
+
+  <form id="choose-role">
+    <select id="choose-role-value">
+      <option value="0">-- Choose Your Role --</option>
+      <option value="1">Warrior</option>
+      <option value="2">Mage</option>
+      <option value="3">Rogue</option>
+    </select>
+  <button id="create-character" type="submit">Create Your Character</button>
+</form><br><br>
+</div>
+<h2 id="log"></h2>
+<div id="fight"> <br><br>
+  <button id="fight-monster">Attack</button>
+  <button id="run-from-monster">Run</button>
+</div>
+<div id="display-div">
+
+</div>
 </body>
+
 </html>

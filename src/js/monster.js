@@ -12,7 +12,7 @@ export function createZombie() {
 }
 
 export function createOwlBear() {
-  let owlBear = new Monster("owlear", 30, 8);
+  let owlBear = new Monster("owlbear", 30, 8);
   return owlBear;
 }
 
