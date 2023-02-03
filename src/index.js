@@ -76,7 +76,6 @@ function callingNewMonsterFunc(hero) {
   callCombatFunc(hero, monster);
 }
 
-
 //load and button logic
 window.addEventListener("load", function () {
   document.querySelector("#choose-role").addEventListener("submit", function (e) {
@@ -84,7 +83,6 @@ window.addEventListener("load", function () {
     handleRoleSelection();
   });
 });
-
 
 (function () {
   var old = console.log;
@@ -97,12 +95,3 @@ window.addEventListener("load", function () {
     }
   };
 })();
-
-
-// var logger = document.getElementById('log');
-// var button = document.createElement('button');
-// button.innerText = 'Attack1';
-// var button2 = document.createElement('button');
-// button2.innerText = 'Run1';
-// logger.append(button);
-// logger.append(button2);
